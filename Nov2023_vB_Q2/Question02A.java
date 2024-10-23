@@ -22,16 +22,13 @@ public class Question02A {
 		
 		System.out.print("\nEnter the Employee name to remove: ");
 		String rName = scan.next();
-		for(String i : AL) {
-			if(i.equals(rName)) {
-				AL.remove(i);
+		if(AL.remove(rName)) {
 				System.out.println("name  was  successfully removed.... ");
 			}
 			else {
 				System.out.println("name was not found..... ");
 
 			}			
-		}
 		System.out.println("\nTotalnumberofemployees inthe ArrayList :" + AL.size());
 		System.out.println("\nAll the remaining employee names ");
 		for(String i : AL) {
