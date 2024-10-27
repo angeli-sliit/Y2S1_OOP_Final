@@ -1,6 +1,6 @@
-package Nov2023_vE_Q3;
+package Q3;
 
-public class ResourceManager {
+ class ResourceManager {
 	boolean[] r;
 	
 	public ResourceManager(int tResources) {
@@ -9,7 +9,7 @@ public class ResourceManager {
 	}
 	public synchronized int requestResource(int userID) {
 		while(true) {
-			for(int i = 0; i<r.length; i++) {
+			for(int i = 1; i<r.length; i++) {
 				if(!r[i]) {
 					r[i]=true;
 					System.out.println("User "+ userID +" acquires Resource " + i);
@@ -28,12 +28,12 @@ public class ResourceManager {
 	}
 	 public synchronized void releaseResource(int resourseId, int userId){
 		 r[resourseId]=false;
-		 System.out.println("User "+ userId +" acquires Resource " + resourseId);
+		 System.out.println("User "+ userId + " relese resource " + resourseId);
 		 notifyAll();
 	 }
 }
 
-class  Main{
+public class  Main{
 	 public static void main(String[] args){
 		 int  TResources  =   3;
 		 int  TUsers  =  5;
